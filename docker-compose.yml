@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  solr:
+    image: solr:latest
+    container_name: solr-container
+    ports:
+      - "8983:8983"  
+    volumes:
+      - solr-data:/var/solr
+    environment:
+      - SOLR_HEAP=2g
+
+volumes:
+  solr-data:
+    driver: local
